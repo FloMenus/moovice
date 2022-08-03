@@ -11,6 +11,7 @@ function Favorites() {
         <Link to="/favorites">Favorites</Link>
       </header>
         <h1>Favorites</h1>
+        
     </div>
   )
 }
