@@ -59,6 +59,36 @@ function Home() {
           })
         )}
       </div>
+      <div>
+        <h2>Top Rated</h2>
+        {!topRated ? (
+          <p>Loading..</p>
+        ) : (
+          topRated.map((movie) => {
+            return (<MinCard movie={movie} key={movie.id} />)
+          })
+        )}
+      </div>
+      <div>
+        <h2>Now Playing</h2>
+        {!nowPlaying ? (
+          <p>Loading..</p>
+        ) : (
+          nowPlaying.map((movie) => {
+            return (<MinCard movie={movie} key={movie.id} />)
+          })
+        )}
+      </div>
+      <div>
+        <h2>Upcoming</h2>
+        {!upcoming ? (
+          <p>Loading..</p>
+        ) : (
+          upcoming.map((movie) => {
+            return (<MinCard movie={movie} key={movie.id} />)
+          })
+        )}
+      </div>
     </div>
   );
 }
