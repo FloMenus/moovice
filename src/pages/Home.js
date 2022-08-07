@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import MinCard from "../components/MinCard";
 
 function Home() {
-  const [latest, setLatest] = useState(null);
+  const [latest, setLatest] = useState([]);
   const [topRated, setTopRated] = useState(null);
   const [nowPlaying, setNowPlaying] = useState(null);
   const [upcoming, setUpcoming] = useState(null);
@@ -18,8 +18,7 @@ function Home() {
       `https://api.themoviedb.org/3/movie/latest?api_key=1068f48961417d98e5c5673164bb2d37&language=en-US`
     );
     const responseLatest = await requestLatest.json();
-    setLatest(responseLatest.results);
-    console.log(responseLatest.results)
+    setLatest(responseLatest);
 
     const requestTopRated = await fetch(
       `https://api.themoviedb.org/3/movie/top_rated?api_key=1068f48961417d98e5c5673164bb2d37&page=1`
@@ -39,6 +38,8 @@ function Home() {
     const responseUpcoming = await requestUpcoming.json();
     setUpcoming(responseUpcoming.results);
   };
+
+  console.log(latest);
   return (
     <div>
       <header>
@@ -51,13 +52,7 @@ function Home() {
       <h1>Home</h1>
       <div>
         <h2>Latest</h2>
-        {!latest ? (
-          <p>Loading..</p>
-        ) : (
-          latest.map((movie) => {
-            return (<MinCard movie={movie} key={movie.id} />)
-          })
-        )}
+        <MinCard movie={latest} key={latest.id} />
       </div>
       <div>
         <h2>Top Rated</h2>
@@ -65,7 +60,7 @@ function Home() {
           <p>Loading..</p>
         ) : (
           topRated.map((movie) => {
-            return (<MinCard movie={movie} key={movie.id} />)
+            return <MinCard movie={movie} key={movie.id} />;
           })
         )}
       </div>
@@ -75,7 +70,7 @@ function Home() {
           <p>Loading..</p>
         ) : (
           nowPlaying.map((movie) => {
-            return (<MinCard movie={movie} key={movie.id} />)
+            return <MinCard movie={movie} key={movie.id} />;
           })
         )}
       </div>
@@ -85,7 +80,7 @@ function Home() {
           <p>Loading..</p>
         ) : (
           upcoming.map((movie) => {
-            return (<MinCard movie={movie} key={movie.id} />)
+            return <MinCard movie={movie} key={movie.id} />;
           })
         )}
       </div>
