@@ -13,6 +13,7 @@ const Favorites = () => {
       favoriteIdsArray = JSON.parse(localStorageIds);
       fetchFavorites(favoriteIdsArray);
     }
+    // eslint-disable-next-line
   }, []);
 
   const fetchMovie = async (id) => {
