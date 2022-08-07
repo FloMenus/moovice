@@ -38,7 +38,7 @@ function Weekly() {
           <Card
             key={movie.title}
             movie={movie}
-            favorite={"Remove"}
+            favorite={"Add"}
           />
         );
       })}
