@@ -42,8 +42,8 @@ const Card = (prop) => {
         alt={prop.movie.title}
       />
       <h3>{prop.movie.title}</h3>
-      <h4>Release: {prop.movie.release}</h4>
-      <p>{prop.movie.description}</p>
+      <h4>Release: {prop.movie.release_date}</h4>
+      <p>{prop.movie.overview}</p>
       <button
         onClick={() =>
           prop.favorite === "Add"

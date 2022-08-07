@@ -19,6 +19,7 @@ function Popular() {
   if (!movies) {
     return <div>Loading ...</div>;
   }
+  console.log(movies)
 
   return (
     <div>

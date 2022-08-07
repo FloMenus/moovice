@@ -37,6 +37,7 @@ const Favorites = () => {
     return <p>Loading..</p>;
   }
 
+
   return (
     <div>
       <header>
