@@ -4,7 +4,7 @@ import MinCard from "../components/MinCard";
 
 import "../style/App.css";
 
-function Home() {
+const Home = () => {
   const [latest, setLatest] = useState([]);
   const [topRated, setTopRated] = useState(null);
   const [nowPlaying, setNowPlaying] = useState(null);
