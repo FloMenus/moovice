@@ -6,9 +6,12 @@ import Weekly from "./pages/Weekly";
 import Popular from "./pages/Popular";
 import Favorites from "./pages/Favorites";
 
+import MainContainer from "./components/MainContainer";
+
 export default function App() {
   return (
     <BrowserRouter>
+    <MainContainer>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/weekly" element={<Weekly />} />
@@ -16,6 +19,7 @@ export default function App() {
         <Route path="/favorites" element={<Favorites />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+    </MainContainer>
     </BrowserRouter>
   );
 }

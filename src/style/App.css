@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@600&display=swap");
+
+/* font-family: 'Catamaran', sans-serif; */
+
+.main {
+  background: url(../images/background.png) repeat center center;
+  padding: 30px;
+  min-height: 100vh;
+}
+
+.logo {
+  height: 60px;
+}
+
+.rubban {
+  margin: 0 auto;
+  -webkit-filter: drop-shadow(0px 5px 5px rgba(5, 0, 0, 0.779));
+  filter: drop-shadow(0px 5px 5px rgba(5, 0, 0, 0.779));
+}
+
+.navbar-all {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 47px;
+  left: 50%;
+  width: 500px;
+  transform: translateX(-50%);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 18px;
+}
+
+.nav-link {
+  font-family: "Catamaran", sans-serif;
+  font-size: 20px;
+  display: inline-block;
+  position: relative;
+}
+
+.nav-link::after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.nav-link:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+.main-title {
+  display: none;
+}
+
+.page-title {
+  font-family: "Catamaran", sans-serif;
+  font-size: 50px;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  margin-top: 100px;
+  text-shadow: 1px -1px 16px rgba(255, 255, 255, 0.59);
+}
+/* MiniCard */
+.min-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 188px;
+  z-index: 1;
+  
+}
+
+.min-card-title {
+  color: white;
+}
+
+.min-card-image {
+  height: 280px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.46);
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.46);
+}
+
+/* ////////// */
+
+.category-title {
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  margin-left: 20px;
+  padding: 0;
+  width: 500px;
+  text-align: start;
+}
+
+.latest-container {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0 60px 0;
+  gap: 18px;
+  justify-content: center;
+  align-items: center;
+  width: 186px;
+}
+
+.latest-title {
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  margin-left: 20px;
+  padding: 0;
+  width: 500px;
+  text-align: start;
+}
+.top-container {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0 60px 0;
+  gap: 18px;
+  margin: 30px 0 60px 0;
+  justify-content: center;
+  align-items: center;
+  overflow-x: scroll;
+  z-index: 2;
+  -webkit-box-shadow: 0px 0px 13px 7px rgba(0, 0, 0, 0.56);
+  box-shadow: 0px 0px 13px 7px rgba(0, 0, 0, 0.56);
+}
+
+.top-wrapper {
+  display: flex;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+.now-container {
+  display: flex;
+  flex-direction: column;
+  padding: 30 0 0 0px;
+  gap: 18px;
+  margin: 30px 0 60px 0;
+  justify-content: center;
+  align-items: center;
+  overflow-x: scroll;
+  z-index: 2;
+  -webkit-box-shadow: 0px 0px 13px 7px rgba(0, 0, 0, 0.56);
+  box-shadow: 0px 0px 13px 7px rgba(0, 0, 0, 0.56);
+}
+
+.now-wrapper {
+  display: flex;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+.upcoming-container {
+  display: flex;
+  flex-direction: column;
+  padding: 30 0 0 0px;
+  gap: 18px;
+  margin: 30px 0 60px 0;
+  justify-content: center;
+  align-items: center;
+  overflow-x: scroll;
+  z-index: 2;
+  -webkit-box-shadow: 0px 0px 13px 7px rgba(0, 0, 0, 0.56);
+  box-shadow: 0px 0px 13px 7px rgba(0, 0, 0, 0.56);
+}
+
+.upcoming-wrapper {
+  display: flex;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+.page-main-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #bf4342 #100303;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #100303;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #bf4342;
+  border-radius: 0px;
+  border: 3px none #ffffff;
+}

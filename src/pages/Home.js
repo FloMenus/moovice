@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import MinCard from "../components/MinCard";
 
+import logo from "../images/logo.png";
+import rubban from "../images/header-rubban2.png";
+import "../style/App.css";
+
 function Home() {
   const [latest, setLatest] = useState([]);
   const [topRated, setTopRated] = useState(null);
@@ -38,44 +42,42 @@ function Home() {
     const responseUpcoming = await requestUpcoming.json();
     setUpcoming(responseUpcoming.results);
   };
-
-  console.log(latest);
   return (
-    <div>
-      <header>
-        <Link to="/">Home</Link>
-        <Link to="/weekly">Weekly</Link>
-        <Link to="/popular">Popular</Link>
-        <Link to="/favorites">Favorites</Link>
-      </header>
-
-      <h1>Home</h1>
-      <div>
-        <h2>Latest</h2>
+    <>
+        <h2 className="category-title no-bar">Latest</h2>
+      <div className="latest-container">
         <MinCard movie={latest} key={latest.id} />
       </div>
-      <div>
-        <h2>Top Rated</h2>
-        {!topRated ? (
-          <p>Loading..</p>
-        ) : (
-          topRated.map((movie) => {
-            return <MinCard movie={movie} key={movie.id} />;
-          })
-        )}
+      <h2 className="category-title">Top Rated</h2>
+      <div className="top-container">
+        <div className="top-wrapper">
+          {!topRated ? (
+            <p>Loading..</p>
+          ) : (
+            topRated.map((movie) => {
+              return <MinCard movie={movie} key={movie.id} />;
+            })
+          )}
+        </div>
+
       </div>
-      <div>
-        <h2>Now Playing</h2>
-        {!nowPlaying ? (
-          <p>Loading..</p>
-        ) : (
-          nowPlaying.map((movie) => {
-            return <MinCard movie={movie} key={movie.id} />;
-          })
-        )}
+      <h2 className="category-title">Now Playing</h2>
+      <div className="now-container">
+        <div className="now-wrapper">
+          {!nowPlaying ? (
+            <p>Loading..</p>
+          ) : (
+            nowPlaying.map((movie) => {
+              return <MinCard movie={movie} key={movie.id} />;
+            })
+          )}
+        </div>
       </div>
+
       <div>
-        <h2>Upcoming</h2>
+        <h2 className="category-title">Upcoming</h2>
+        <div className="upcoming-container">
+          <div className="upcoming-wrapper">
         {!upcoming ? (
           <p>Loading..</p>
         ) : (
@@ -85,6 +87,9 @@ function Home() {
         )}
       </div>
     </div>
+    </div>
+    </>
+
   );
 }
 

@@ -1,14 +1,18 @@
+import placeholder from "../images/placeholder.png";
 
 const MinCard = (prop) => {
   return (
-    <div>
+    <div className="min-card">
+      {/* <h3 className="min-card-title">{prop.movie.title}</h3> */}
       <img
-        src={!prop.movie.poster_path ? 'https://www.pngall.com/wp-content/uploads/1/Film-High-Quality-PNG.png'
-        :
-        `https://image.tmdb.org/t/p/w300/${prop.movie.poster_path}`}
+        src={
+          !prop.movie.poster_path
+            ? placeholder
+            : `https://image.tmdb.org/t/p/w300/${prop.movie.poster_path}`
+        }
         alt={prop.movie.title}
+        className="min-card-image"
       />
-      <h3>{prop.movie.title}</h3>
     </div>
   );
 };

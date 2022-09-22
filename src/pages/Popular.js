@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Card from "../components/Card";
+import PageTitle from "../components/PageTitle";
 
 function Popular() {
   const [movies, setMovies] = useState(null);
@@ -19,20 +20,16 @@ function Popular() {
   if (!movies) {
     return <div>Loading ...</div>;
   }
-  console.log(movies)
+  console.log(movies);
 
   return (
     <div>
-      <header>
-        <Link to="/">Home</Link>
-        <Link to="/weekly">Weekly</Link>
-        <Link to="/popular">Popular</Link>
-        <Link to="/favorites">Favorites</Link>
-      </header>
-      <h1>Popular</h1>
-      {movies.results.map((movie) => (
-      <Card key={movie.title} movie={movie} favorite={"Add"} />
-      ))}
+      <PageTitle title="Popular" />
+      <div className="page-main-container">
+        {movies.results.map((movie) => (
+          <Card key={movie.title} movie={movie} favorite={"Add"} />
+        ))}
+      </div>
     </div>
   );
 }

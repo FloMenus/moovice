@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Card from "../components/Card";
+import PageTitle from "../components/PageTitle";
 
 const Favorites = () => {
   const [favoriteMovies, setFavoriteMovies] = useState([]);
@@ -37,26 +38,21 @@ const Favorites = () => {
     return <p>Loading..</p>;
   }
 
-
   return (
     <div>
-      <header>
-        <Link to="/">Home</Link>
-        <Link to="/weekly">Weekly</Link>
-        <Link to="/popular">Popular</Link>
-        <Link to="/favorites">Favorites</Link>
-      </header>
-      <h1>Favorites</h1>
-      {favoriteMovies.map((movie) => {
-        return (
-          <Card
-            key={movie.title}
-            movie={movie}
-            favorite={"Remove"}
-            fetchFav={fetchFavorites}
-          />
-        );
-      })}
+      <PageTitle title="Favorites" />
+      <div className="page-main-container">
+        {favoriteMovies.map((movie) => {
+          return (
+            <Card
+              key={movie.title}
+              movie={movie}
+              favorite={"Remove"}
+              fetchFav={fetchFavorites}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };
