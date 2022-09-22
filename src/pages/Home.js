@@ -1,10 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import MinCard from "../components/MinCard";
 
-import logo from "../images/logo.png";
-import rubban from "../images/header-rubban2.png";
 import "../style/App.css";
 
 function Home() {
