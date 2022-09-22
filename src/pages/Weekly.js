@@ -8,7 +8,7 @@ import "../style/App.css";
 import "../style/Weekly.css";
 
 const Weekly = () => {
-  const [movies, setMovies] = useState(null);
+  const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     fetchData();
