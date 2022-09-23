@@ -11,7 +11,7 @@ const MainContainer = ({ children }) => {
       {width < breakpoint ? (
         <div className="navbar rounded-sm navbar-responsive bg-red-800">
           <div className="flex-1">
-          <Link to="/">
+            <Link to="/">
               <h1 className="main-title">Moovice</h1>
               <img src={logo} alt="logo" className="logo" />
             </Link>
@@ -19,7 +19,7 @@ const MainContainer = ({ children }) => {
           <div className="flex-none">
             <ul className="menu menu-horizontal p-0">
               <li tabIndex={0}>
-                <a className="nav-link">
+                <div className="nav-link">
                   Movies
                   <svg
                     className="fill-current"
@@ -30,24 +30,24 @@ const MainContainer = ({ children }) => {
                   >
                     <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
                   </svg>
-                </a>
+                </div>
                 <ul className="p-2 bg-red-700">
                   <li>
-                  <Link to="/weekly">
-                <p className="nav-link">Weekly</p>
-              </Link>
+                    <Link to="/weekly">
+                      <p className="nav-link">Weekly</p>
+                    </Link>
                   </li>
                   <li>
-                  <Link to="/popular">
-                <p className="nav-link">Popular</p>
-              </Link>
+                    <Link to="/popular">
+                      <p className="nav-link">Popular</p>
+                    </Link>
                   </li>
                 </ul>
               </li>
               <li>
-              <Link to="/favorites">
-                <p className="nav-link">Favorites</p>
-              </Link>
+                <Link to="/favorites">
+                  <p className="nav-link">Favorites</p>
+                </Link>
               </li>
             </ul>
           </div>
