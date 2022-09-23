@@ -11,7 +11,7 @@ const MinCard = (prop) => {
             : `https://image.tmdb.org/t/p/w300/${prop.movie.poster_path}`
         }
         alt={prop.movie.title}
-        className="min-card-image"
+        className="min-card-image" {...prop.movie.adult ? "adult" : ""}
       />
     </div>
   );

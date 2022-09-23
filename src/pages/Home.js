@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+
 import MinCard from "../components/MinCard";
 
 import "../style/App.css";
@@ -39,11 +40,14 @@ const Home = () => {
     const responseUpcoming = await requestUpcoming.json();
     setUpcoming(responseUpcoming.results);
   };
+
+
   return (
     <>
+    {console.log(latest)}
         <h2 className="category-title no-bar">Latest</h2>
       <div className="latest-container">
-        <MinCard movie={latest} key={latest.id} />
+        <MinCard movie={latest} key={latest.id} adult={latest.adult}/>
       </div>
       <h2 className="category-title">Top Rated</h2>
       <div className="top-container">
