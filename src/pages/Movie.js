@@ -20,7 +20,9 @@ const Home = () => {
     fetchData();
     fetchCast();
     fetchSimilars();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   const fetchData = async () => {
     const requestMovie = await fetch(
       `https://api.themoviedb.org/3/movie/${id}?api_key=1068f48961417d98e5c5673164bb2d37&language=en-US`
