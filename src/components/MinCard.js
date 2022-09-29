@@ -1,9 +1,11 @@
 import placeholder from "../images/placeholder.png";
+import { Link } from "react-router-dom";
 
 const MinCard = (prop) => {
   return (
+
+    <Link to = {`/movie/${prop.movie.id}`}>
     <div className="min-card">
-      {/* <h3 className="min-card-title">{prop.movie.title}</h3> */}
       <img
         src={
           !prop.movie.poster_path
@@ -14,6 +16,7 @@ const MinCard = (prop) => {
         className="min-card-image" {...prop.movie.adult ? "adult" : ""}
       />
     </div>
+    </Link>
   );
 };
 

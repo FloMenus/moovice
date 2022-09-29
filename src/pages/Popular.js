@@ -19,7 +19,6 @@ function Popular() {
   if (!movies) {
     return <div>Loading ...</div>;
   }
-  console.log(movies);
 
   return (
     <div>
@@ -34,21 +33,3 @@ function Popular() {
 }
 
 export default Popular;
-
-// const handleClickFavorite = (id) => {
-//   if (localStorage.favoriteIds === undefined) {
-//     const array = [];
-//     array.push(id);
-//     console.log(array);
-//     const stringify = JSON.stringify(array);
-//     localStorage.setItem("favoriteIds", stringify);
-//   } else {
-//     const localStorageIds = localStorage.getItem("favoriteIds");
-//     const favoriteIds = JSON.parse(localStorageIds);
-//     const isInclude = favoriteIds.includes(id);
-//     if (isInclude) {
-//       const stringify = JSON.stringify(favoriteIds);
-//       localStorage.setItem("favoriteIds", stringify);
-//     }
-//   }
-// };

@@ -41,13 +41,11 @@ const Home = () => {
     setUpcoming(responseUpcoming.results);
   };
 
-
   return (
     <>
-    {console.log(latest)}
-        <h2 className="category-title no-bar">Latest</h2>
+      <h2 className="category-title no-bar">Latest</h2>
       <div className="latest-container">
-        <MinCard movie={latest} key={latest.id} adult={latest.adult}/>
+        <MinCard movie={latest} key={latest.id} adult={latest.adult} />
       </div>
       <h2 className="category-title">Top Rated</h2>
       <div className="top-container">
@@ -60,7 +58,6 @@ const Home = () => {
             })
           )}
         </div>
-
       </div>
       <h2 className="category-title">Now Playing</h2>
       <div className="now-container">
@@ -79,19 +76,18 @@ const Home = () => {
         <h2 className="category-title">Upcoming</h2>
         <div className="upcoming-container">
           <div className="upcoming-wrapper">
-        {!upcoming ? (
-          <p>Loading..</p>
-        ) : (
-          upcoming.map((movie) => {
-            return <MinCard movie={movie} key={movie.id} />;
-          })
-        )}
+            {!upcoming ? (
+              <p>Loading..</p>
+            ) : (
+              upcoming.map((movie) => {
+                return <MinCard movie={movie} key={movie.id} />;
+              })
+            )}
+          </div>
+        </div>
       </div>
-    </div>
-    </div>
     </>
-
   );
-}
+};
 
 export default Home;
